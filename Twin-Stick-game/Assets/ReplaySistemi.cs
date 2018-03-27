@@ -7,17 +7,19 @@ public class ReplaySistemi : MonoBehaviour {
     private const int bufferFrames = 100;
     private MyKeyFrame[] keyFrames = new MyKeyFrame[bufferFrames];
     private Rigidbody rigidBody;
+    private OyunYoneticisi yonetici;
 
 	// Use this for initialization
 	void Start () {
         rigidBody = GetComponent<Rigidbody>();
-        //MyKeyFrame testKey = new MyKeyFrame(1.0f, Vector3.up, Quaternion.identity);
+        yonetici  = GameObject.FindObjectOfType<OyunYoneticisi>();
 	}
 	
 	// Update is called once per frame
 	void Update ()
     {
-        Kayit();
+        if (yonetici.kaydediyor)        {            Kayit();        } 
+        else                            {            Oynat();        }
     }
 
     void Oynat()
