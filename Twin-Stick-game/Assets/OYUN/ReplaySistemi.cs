@@ -36,7 +36,7 @@ public class ReplaySistemi : MonoBehaviour {
         rigidBody.isKinematic = false;
         int kare = Time.frameCount % bufferFrames; // örnek   -- 20 % 8 = (8 * 2) + 4 --   bize kalan "4" sayısı 
         float zaman = Time.time;
-        print("Hafızaya alınan kare sayısı " + kare);
+        //print("Hafızaya alınan kare sayısı " + kare);
 
         keyFrames[kare] = new MyKeyFrame(zaman, transform.position, transform.rotation);
     }
