@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class KameraPan : MonoBehaviour {
 
+    private GameObject oyuncu;
+
 	// Use this for initialization
 	void Start () {
-		
+        oyuncu = GameObject.FindGameObjectWithTag("Player");
 	}
 	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+	void LateUpdate () {
+        transform.LookAt(oyuncu.transform);
+    }
 }
